@@ -2,106 +2,65 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Recompensa da Educação</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .background-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.7); /* Branco com 70% de opacidade */
-            z-index: -1; /* Coloca atrás do conteúdo */
-        }
-        .container {
-            position: relative; /* Importante para o z-index funcionar */
-            z-index: 1; /* Coloca na frente da overlay */
-            background-image: url('img/educafro.png');
-            background-size: cover;
-            background-position: center;
-            padding: 200px;
-            box-sizing: border-box;
-        }
-        h1 {
-            color: #3b5998; /* Altere a cor do título principal */
-            font-size: 36px; /* Altere o tamanho da fonte */
-            text-align: center;
-            font-weight: bold; /* Texto do título em negrito */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombreamento do título */
-        }
-        h2 {
-            color: #000000;
-            font-size: 28px;
-            text-align: center;
-            font-weight: bold; /* Texto do subtítulo em negrito */
-        }
-        p {
-            color: #333;
-            font-size: 18px;
-            margin-bottom: 20px;
-            font-weight: bold; /* Texto dos parágrafos em negrito */
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        li {
-            font-size: 18px;
-            margin-bottom: 10px;
-            font-weight: bold; /* Texto dos itens da lista em negrito */
-        }
-        img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 0 auto;
-            border: 5px solid #3b5998; /* Adicione uma borda na imagem */
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 20px;
-            color: #fff;
-            background-color: #3b5998;
-            border: none;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.2s ease-out;
-        }
-        .btn:hover {
-            background-color: #265077;
-            transform: scale(1.05);
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Currículo caramelo</title>
 </head>
-<body>
-    <div class="background-overlay"></div>
+<body> 
+
     <div class="container">
-        <h1>A Recompensa da Educação</h1>
-        <h2>Os Ingredientes para o Sucesso</h2>
-        <p>A educação é a chave para um futuro brilhante e repleto de oportunidades. Nesta "receita" especial, vamos explorar os ingredientes essenciais que compõem a recompensa da educação, garantindo um desenvolvimento pessoal e profissional sólido.</p>
-        <p>Prepare-se para uma jornada de aprendizado contínuo e descobertas, onde cada ingrediente adiciona valor ao seu crescimento. Siga essas instruções e saboreie as recompensas de uma educação de qualidade.</p>
-        <ul>
-            <li>1 dose de dedicação diária</li>
-            <li>2 xícaras de curiosidade</li>
-            <li>1 pitada de perseverança</li>
-            <li>4 horas de estudo concentrado</li>
-            <li>1 mentoria inspiradora</li>
-            <li>3 projetos práticos</li>
-            <li>5 momentos de reflexão</li>
-        </ul>
-       <center><a class="btn" href="https://educafrotech.educafro.org.br/">Visite EducaFroTech</a></center>
+        <header id="personal-info">
+            <div class="photo"><img src="photo.jpg" class="profile-pic" alt="Foto caramelo"></div>
+            <div class="info">
+                <h2 class="name">Caramelo Programador</h2>
+                <div class="age">3 Anos</div>
+                <div class="email">caramelo@tvcolosso.com</div>
+            </div>
+        </header>
+
+        <section id="about">
+            <h3>Sobre</h3>
+            <p><strong>Objetivo:</strong> Desenvolvedor de Software Canino</p>
+            <p>Sou um cachorro dedicado e entusiasta que busca uma carreira na área de desenvolvimento de software. Com habilidades excepcionais em lógica de programação e resolução de problemas, estou determinado a trazer uma abordagem única e inovadora para o mundo da tecnologia.</p>
+        </section>
+
+        <section id="skills">
+            <h3>Habilidades</h3>
+            <ul class="item-list">
+                <li class="item">
+                    <div class="title">Linguagens de Programação</div>
+                    <p>Proficiente em "BarkScript" e "Fetch++", com conhecimentos básicos em "Python" e "JavaScript".</p>
+                </li>
+                <li class="item">
+                    <div class="title">Algoritmos Caninos</div>
+                    <p>Especializado em algoritmos de busca eficientes para encontrar brinquedos escondidos e em otimizar rotas para corridas no parque.</p>
+                </li>
+                <li class="item">
+                    <div class="title">Colaboração em Equipe</div>
+                    <p>Demonstrada capacidade de trabalho em equipe, especialmente em atividades de desenvolvimento de projetos conjuntos, como a criação de estratégias para pegar a bolinha no menor tempo possível.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h3>Formação</h3>
+            <div class="education">
+                <ul class="item-list">
+                    <li class="item">
+                        <div class="title">Educação</div>
+                        <p>Curso de "Introdução à Programação Canina", Escola de Treinamento Avançado para Cães.</p>
+                    </li>
+
+                    <li class="item">
+                        <div class="title">Certificações</div>
+                        <p>Certificado em "Desenvolvimento Ágil de Códigos com Patinhas Rápidas".</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>
+    
 </body>
 </html>

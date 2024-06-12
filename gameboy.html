@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameBoy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0; /* Cor de fundo */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .corpo {
+            width: 260px;
+            height: 400px;
+            background-color: #aaa; /* Cor do Game Boy */
+            border: 5px solid #333; /* Bordas */
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .tela {
+            width: 160px;
+            height: 120px;
+            background-color: #444; /* Cor da tela */
+            border: 2px solid #333; /* Bordas da tela */
+            border-top: none;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tela .led {
+            width: 10px;
+            height: 10px;
+            background-color: red; /* Cor do sensor */
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        .tela .game {
+            font-size: 10px;
+            color: #999; /* Cor do texto */
+            margin-top: 5px;
+        }
+
+        .nome {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333; /* Cor do texto */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .nome .gb {
+            font-size: 24px;
+            color: #ff69b4; /* Cor do texto */
+        }
+
+        .controles {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .seta-direcional {
+            width: 30px;
+            height: 30px;
+            background-color: #333; /* Cor do dpad */
+            border: 2px solid #666; /* Bordas do dpad */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .seta-direcional .horizontal {
+            width: 20px;
+            height: 2px;
+            background-color: #666; /* Cor das setas */
+            transform: rotate(0deg);
+        }
+
+        .seta-direcional .vertical {
+            width: 2px;
+            height: 20px;
+            background-color: #666; /* Cor das setas */
+            transform: rotate(90deg);
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .botoes .botao {
+            width: 25px;
+            height: 25px;
+            background-color: #333; /* Cor dos botões */
+            border: 2px solid #666; /* Bordas dos botões */
+            border-radius: 50%;
+        }
+
+        .botao-b {
+            background-color: #33cc33; /* Cor do botão B */
+        }
+
+        .botao-a {
+            background-color: #ff69b4; /* Cor do botão A */
+        }
+
+        .start-select {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .start-select .botao {
+            width: 40px;
+            height: 20px;
+            background-color: #333; /* Cor dos botões */
+            border: 2px solid #666; /* Bordas dos botões */
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .start-select .botao .forma {
+            width: 10px;
+            height: 10px;
+            background-color: #666; /* Cor da forma */
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .start-select .botao .texto {
+            font-size: 10px;
+            color: #fff; /* Cor do texto */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .start-select .botao.start {
+            background-color: #33cc33; /* Cor do botão Start */
+        }
+
+        .start-select .botao.select {
+            background-color: #ff69b4; /* Cor do botão Select */
+        }
+
+        .speakers {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .speakers .line {
+            width: 20px;
+            height: 2px;
+            background-color: #666; /* Cor das linhas */
+            margin: 5px;
+        }
+
+        .speakers .line-1 {
+            transform: rotate(45deg);
+        }
+
+        .speakers .line-2 {
+            transform: rotate(0deg);
+        }
+
+        .speakers .line-3 {
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="corpo">
+        <div class="tela">
+            <div class="led"></div>
+            <div class="game">Educafro GAME BOY</div>
+        </div>
+        <div class="nome">
+            Educafro <span class="gb">GAME BOY</span>
+        </div>
+
+        <div class="controles">
+            <div class="seta-direcional">
+                <div class="horizontal"></div>
+                <div class="vertical"></div>
+            </div>
+            <div class="botoes">
+                <div class="botao botao-b"></div>
+                <div class="botao botao-a"></div>
+            </div>
+        </div>
+
+        <div class="start-select">
+            <div class="botao start">
+                <div class="forma"></div>
+                <div class="texto">Start</div>
+            </div>
+
+            <div class="botao select">
+                <div class="forma"></div>
+                <div class="texto">Select</div>
+            </div>
+        </div>
+
+        <div class="speakers">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+        </div>
+    </div>    
+</body>
+</html>
