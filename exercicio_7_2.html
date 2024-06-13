@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuste de Tamanho de Fonte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/educafrologo.jpeg" alt="Logo Educafro">
+        </div>
+        <h1>Ajuste de Tamanho de Fonte</h1>
+        <div class="buttons">
+            <button id="aumentarBtn">+</button>
+            <button id="diminuirBtn">-</button>
+        </div>
+        <p>
+            Na PRETA TECH, nós capacitamos mulheres afrodescendentes para brilharem na tecnologia. 
+            Nossos cursos são feitos sob medida para ajudá-las a dominar habilidades de programação 
+            e alcançar seus sonhos profissionais. Junte-se a nós e vamos construir um futuro mais inclusivo e diversificado juntas!
+        </p>
+    </div>
+
+    <script>
+        document.getElementById('aumentarBtn').addEventListener('click', function () {
+            aumentarFonte();
+        });
+
+        document.getElementById('diminuirBtn').addEventListener('click', function () {
+            diminuirFonte();
+        });
+
+        function aumentarFonte() {
+            var paragrafos = document.getElementsByTagName('p');
+            for (var i = 0; i < paragrafos.length; i++) {
+                var tamanhoAtual = window.getComputedStyle(paragrafos[i], null).getPropertyValue('font-size');
+                var novoTamanho = parseFloat(tamanhoAtual) + 2;
+                paragrafos[i].style.fontSize = novoTamanho + 'px';
+            }
+        }
+
+        function diminuirFonte() {
+            var paragrafos = document.getElementsByTagName('p');
+            for (var i = 0; i < paragrafos.length; i++) {
+                var tamanhoAtual = window.getComputedStyle(paragrafos[i], null).getPropertyValue('font-size');
+                var novoTamanho = parseFloat(tamanhoAtual) - 2;
+                paragrafos[i].style.fontSize = novoTamanho + 'px';
+            }
+        }
+
+    </script>
+</body>
+
+</html>

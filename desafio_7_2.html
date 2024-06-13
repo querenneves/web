@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformar Texto em Lista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(100% - 20px);
+            /* Ajustando largura do input */
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .lista {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .lista ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .lista li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/educafrologo.jpeg" alt="Logo Educafro">
+        </div>
+        <h1>Transformar Texto em Lista</h1>
+        <input type="text" id="textoInput" placeholder="Digite palavras separadas por espaço">
+        <br>
+        <button id="enviarBtn">Enviar</button>
+        <div class="lista" id="lista"></div>
+    </div>
+
+    <script>
+        document.getElementById('enviarBtn').addEventListener('click', function () {
+            var texto = document.getElementById('textoInput').value.trim();
+            var listaDiv = document.getElementById('lista');
+
+            if (texto === '') {
+                listaDiv.innerHTML = '<p>Por favor, digite algumas palavras no campo acima.</p>';
+                return;
+            }
+
+            var palavras = texto.split(' ');
+            var listaHTML = '<ul>';
+            palavras.forEach(function (palavra) {
+                listaHTML += '<li>' + palavra + '</li>';
+            });
+            listaHTML += '</ul>';
+
+            listaDiv.innerHTML = listaHTML;
+        });
+        
+    </script>
+</body>
+
+</html>
