@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Notas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            /* Centraliza horizontalmente */
+            align-items: center;
+            /* Centraliza verticalmente */
+            flex: 0 0 auto;
+            /* Tamanho automático conforme o conteúdo da imagem */
+            margin-bottom: 20px;
+            /* Espaço abaixo da imagem */
+        }
+
+        .image-container img {
+            max-width: 100px;
+            /* Ajuste o tamanho conforme necessário */
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            /* Adicionando borda arredondada à imagem */
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .passou {
+            color: green;
+            font-weight: bold;
+            animation: glow 1s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px green;
+            }
+
+            to {
+                text-shadow: 0 0 20px green;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="img/educafrologo.jpeg" alt="Logo Educafro">
+        </div>
+        <h1>Verificador de Notas</h1>
+        <form id="notaForm">
+            <label for="nota1">Nota 1:</label>
+            <input type="number" id="nota1" name="nota1" required>
+            <label for="nota2">Nota 2:</label>
+            <input type="number" id="nota2" name="nota2" required>
+            <label for="nota3">Nota 3:</label>
+            <input type="number" id="nota3" name="nota3" required>
+            <br>
+            <button type="submit">Verificar</button>
+        </form>
+        <div id="resultado" class="resultado">
+            <!-- Aqui será mostrado o resultado -->
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('notaForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Pegar os valores das notas
+            var nota1 = parseFloat(document.getElementById('nota1').value);
+            var nota2 = parseFloat(document.getElementById('nota2').value);
+            var nota3 = parseFloat(document.getElementById('nota3').value);
+
+            // Calcular a média
+            var media = (nota1 + nota2 + nota3) / 3;
+
+            // Verificar a média e exibir o resultado
+            var resultadoDiv = document.getElementById('resultado');
+            if (media >= 6) {
+                resultadoDiv.textContent = "Passou de ano";
+                resultadoDiv.classList.add('passou');
+            } else {
+                resultadoDiv.textContent = "Recuperação";
+                resultadoDiv.classList.remove('passou');
+            }
+        });
+    </script>
+</body>
+
+</html>
